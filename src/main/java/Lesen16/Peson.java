@@ -1,7 +1,6 @@
 package Lesen16;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 public class Peson {
     private String name;
@@ -10,6 +9,8 @@ public class Peson {
     private LocalDateTime dob;
     private String username;
     private String password;
+
+    public static int qwe = 5;
 
     public Peson() {
     }
@@ -78,12 +79,12 @@ public class Peson {
 
         Peson peson = (Peson) o;
 
-        if (!Objects.equals(name, peson.name)) return false;
-        if (!Objects.equals(lastName, peson.lastName)) return false;
-        if (!Objects.equals(country, peson.country)) return false;
-        if (!Objects.equals(dob, peson.dob)) return false;
-        if (!Objects.equals(username, peson.username)) return false;
-        return Objects.equals(password, peson.password);
+        if (name != null ? !name.equals(peson.name) : peson.name != null) return false;
+        if (lastName != null ? !lastName.equals(peson.lastName) : peson.lastName != null) return false;
+        if (country != null ? !country.equals(peson.country) : peson.country != null) return false;
+        if (dob != null ? !dob.equals(peson.dob) : peson.dob != null) return false;
+        if (username != null ? !username.equals(peson.username) : peson.username != null) return false;
+        return password != null ? password.equals(peson.password) : peson.password == null;
     }
 
     @Override
@@ -108,5 +109,4 @@ public class Peson {
                 ", password='" + password + '\'' +
                 '}';
     }
-
 }
